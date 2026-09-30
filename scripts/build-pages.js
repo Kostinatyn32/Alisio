@@ -66,6 +66,18 @@ write('qr/index.html', rewriteSitePaths(fs.readFileSync(path.join(root, 'qr.html
 write('qr/qr.css', rewriteSitePaths(fs.readFileSync(path.join(root, 'qr.css'), 'utf8'), true));
 write('qr/qr.js', rewriteSitePaths(fs.readFileSync(path.join(root, 'qr.js'), 'utf8'), true));
 write('qr/qr-config.js', fs.readFileSync(path.join(root, 'qr-config.js'), 'utf8'));
+const businessPage = fs.readFileSync(path.join(root, 'business-audit.html'), 'utf8');
+write('business-audit/index.html', rewriteSitePaths(businessPage)
+  .replaceAll('href="/assets/', `href="${basePath}/assets/`)
+  .replaceAll('src="/assets/', `src="${basePath}/assets/`)
+  .replaceAll('href="/privacy"', `href="${basePath}/privacy/`)
+  .replaceAll('href="/ai-audit"', `href="${basePath}/`)
+  .replaceAll('href="/business-audit.css"', `href="${basePath}/business-audit/business-audit.css"`)
+  .replaceAll('src="/business-audit.js"', `src="${basePath}/business-audit/business-audit.js"`)
+  .replaceAll('src="/qr-config.js"', `src="${basePath}/qr-config.js"`));
+write('business-audit/business-audit.css', fs.readFileSync(path.join(root, 'business-audit.css'), 'utf8'));
+write('business-audit/business-audit.js', fs.readFileSync(path.join(root, 'business-audit.js'), 'utf8'));
+write('qr-config.js', fs.readFileSync(path.join(root, 'qr-config.js'), 'utf8'));
 
 const privacy = fs.readFileSync(path.join(root, 'public', 'privacy.html'), 'utf8');
 write('privacy/index.html', rewriteSitePaths(privacy));

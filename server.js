@@ -104,11 +104,15 @@ const server = http.createServer(async (req, res) => {
 
   let pathname = decodeURIComponent(url.pathname);
   if (pathname === '/ai-audit' || pathname === '/ai-audit/') pathname = '/';
+  if (pathname === '/business-audit' || pathname === '/business-audit/') pathname = '/business-audit.html';
   if (pathname === '/qr' || pathname === '/qr/') pathname = '/qr.html';
   if (pathname === '/privacy' || pathname === '/privacy/') pathname = '/privacy.html';
   if (pathname === '/') pathname = '/index.html';
   const rootFiles = new Map([
     ['/index.html', path.join(ROOT, 'index.html')],
+    ['/business-audit.html', path.join(ROOT, 'business-audit.html')],
+    ['/business-audit.css', path.join(ROOT, 'business-audit.css')],
+    ['/business-audit.js', path.join(ROOT, 'business-audit.js')],
     ['/qr.html', path.join(ROOT, 'qr.html')],
     ['/qr.css', path.join(ROOT, 'qr.css')],
     ['/qr.js', path.join(ROOT, 'qr.js')],
