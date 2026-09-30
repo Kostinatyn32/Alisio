@@ -1,5 +1,6 @@
-/* Додайте адреси Telegram та WhatsApp перед публікацією мінілендингу. */
+const whatsappMessage = encodeURIComponent('Вітаю! Хочу подати заявку на безкоштовний AI-аудит готелю.');
+
 window.ALISIO_QR_CONFIG = {
-  telegramUrl: '', // Наприклад: https://t.me/your_bot?start=qr_event_01
-  whatsappUrl: '' // Наприклад: https://wa.me/380XXXXXXXXX?text=...
+  telegramUrl: 'https://t.me/oleg_ssh',
+  whatsappUrl: `https://wa.me/420773708849?text=${whatsappMessage}`
 };
