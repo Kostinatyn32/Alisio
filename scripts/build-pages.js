@@ -72,10 +72,10 @@ write('business-audit/index.html', rewriteSitePaths(businessPage)
   .replaceAll('src="/assets/', `src="${basePath}/assets/`)
   .replaceAll('href="/privacy"', `href="${basePath}/privacy/`)
   .replaceAll('href="/ai-audit"', `href="${basePath}/`)
-  .replaceAll('href="/business-audit.css"', `href="${basePath}/business-audit/business-audit-v2.css"`)
+  .replaceAll('href="/business-audit.css"', `href="${basePath}/business-audit/business-audit-v3.css"`)
   .replaceAll('src="/business-audit.js"', `src="${basePath}/business-audit/business-audit.js"`)
   .replaceAll('src="/qr-config.js"', `src="${basePath}/qr-config.js"`));
-write('business-audit/business-audit-v2.css', fs.readFileSync(path.join(root, 'business-audit.css'), 'utf8'));
+write('business-audit/business-audit-v3.css', fs.readFileSync(path.join(root, 'business-audit.css'), 'utf8'));
 write('business-audit/business-audit.js', fs.readFileSync(path.join(root, 'business-audit.js'), 'utf8'));
 write('qr-config.js', fs.readFileSync(path.join(root, 'qr-config.js'), 'utf8'));
 
